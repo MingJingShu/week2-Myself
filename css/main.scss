@@ -21,12 +21,59 @@ body {
 }
 
 .container {
-  width: 1920px;
+  max-width: 100%;
   margin: 0 auto;
 }
-
-
-
+.js-to-top{
+  position: absolute;
+  background: #000;
+  right: 3rem;
+  bottom: 20rem;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  border-radius: 100%;
+  transition: .3s ease-in-out;
+  cursor: none;
+  &:after,&:before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 49%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    width: 5px;
+    height: 22px;
+  }
+  &:before{
+    transform: translate(calc((-50% + 6px)), -50%) rotate(-45deg);
+  }
+  &:after{
+    transform: translate(calc((-50% - 6px)), -50%) rotate(45deg);
+  }
+  
+ 
+}
+.js-to-top:active{
+  transition: .3s ease-in-out;
+  transform: scale(.9);
+}
+.js-to-top.active{
+  transition: .3s ease-in-out;
+  opacity: 1;
+  cursor: pointer;
+  &:hover{
+    &:after,&:before{
+      animation: js-to-top-active .7s linear infinite;
+    }
+  } 
+  
+}
+@keyframes js-to-top-active{
+  0%{top: 50%}
+  50%{top: 42%}
+  100%{top: 50%}
+}
 .title-second{
   font-size: 64px;
   line-height: 75px;
@@ -44,6 +91,7 @@ body {
 .header.banner {
   height: 958px;
   background: url(../image/banner.png)no-repeat;
+  background-position: center;
 }
 
 .header .title {
@@ -191,12 +239,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  // img{
-  //   margin-right: 24px;
-  //   &:last-child{
-  //     margin: 0;
-  //   }
-  // }
 }
 
 .otherWorks{
@@ -247,6 +289,7 @@ body {
   text-align: center;
   padding-top: 60px;
   padding-bottom: 80px;
+  position: relative;
 }
 .footer p {
   font-size: 24px;

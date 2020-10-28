@@ -61,8 +61,75 @@ body {
   color: #fff; }
 
 .container {
-  width: 1920px;
+  max-width: 100%;
   margin: 0 auto; }
+
+.js-to-top {
+  position: absolute;
+  background: #000;
+  right: 3rem;
+  bottom: 20rem;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  border-radius: 100%;
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  cursor: none; }
+  .js-to-top:after, .js-to-top:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 49%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 5px;
+    height: 22px; }
+  .js-to-top:before {
+    -webkit-transform: translate(calc((-50% + 6px)), -50%) rotate(-45deg);
+    -ms-transform: translate(calc((-50% + 6px)), -50%) rotate(-45deg);
+    transform: translate(calc((-50% + 6px)), -50%) rotate(-45deg); }
+  .js-to-top:after {
+    -webkit-transform: translate(calc((-50% - 6px)), -50%) rotate(45deg);
+    -ms-transform: translate(calc((-50% - 6px)), -50%) rotate(45deg);
+    transform: translate(calc((-50% - 6px)), -50%) rotate(45deg); }
+
+.js-to-top:active {
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9); }
+
+.js-to-top.active {
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  opacity: 1;
+  cursor: pointer; }
+  .js-to-top.active:hover:after, .js-to-top.active:hover:before {
+    -webkit-animation: js-to-top-active .7s linear infinite;
+    animation: js-to-top-active .7s linear infinite; }
+
+@-webkit-keyframes js-to-top-active {
+  0% {
+    top: 50%; }
+  50% {
+    top: 42%; }
+  100% {
+    top: 50%; } }
+
+@keyframes js-to-top-active {
+  0% {
+    top: 50%; }
+  50% {
+    top: 42%; }
+  100% {
+    top: 50%; } }
 
 .title-second {
   font-size: 64px;
@@ -84,7 +151,8 @@ body {
 
 .header.banner {
   height: 958px;
-  background: url(../image/banner.png) no-repeat; }
+  background: url(../image/banner.png) no-repeat;
+  background-position: center; }
 
 .header .title h1 {
   font-size: 80px;
@@ -253,7 +321,8 @@ body {
   background: #000;
   text-align: center;
   padding-top: 60px;
-  padding-bottom: 80px; }
+  padding-bottom: 80px;
+  position: relative; }
 
 .footer p {
   font-size: 24px;
