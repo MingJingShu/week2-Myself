@@ -19,7 +19,9 @@ body {
   font-style: italic;
   color: #fff;
 }
-
+.black{
+  color: #000;
+}
 .container {
   max-width: 100%;
   margin: 0 auto;
@@ -74,7 +76,7 @@ body {
   50%{top: 42%}
   100%{top: 50%}
 }
-.title-second{
+h1{
   font-size: 64px;
   line-height: 75px;
   font-weight: bold;
@@ -125,7 +127,6 @@ body {
 }
 
 .about {
-  color: #000;
   text-align: center;
   font-weight: bold;
   margin-bottom:56px ;
@@ -185,13 +186,20 @@ body {
 }
 
 .about-list-point {
-  background: #891818;
-  border-radius: 100%;
-  width: 22px;
-  height: 22px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 12px;
+    display: inline-block;
+    line-height: 28px;
+    vertical-align: middle;
+  &:before{
+    content: '';
+    background: #891818;
+    border-radius: 100%;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12px;
+    margin-bottom: 2px;
+  }
 }
 
 .myBrand {
@@ -205,7 +213,7 @@ body {
   padding-bottom: 160px;
 }
 
-.myBrand .title {
+.myBrand h1 {
   font-size: 64px;
   line-height: 75px;
 }
@@ -243,7 +251,6 @@ body {
 
 .otherWorks{
   margin-bottom:104px;
-  color: #000;
   text-align: center;
 }
 .otherWorks .content{
